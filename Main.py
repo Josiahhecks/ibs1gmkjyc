@@ -3,11 +3,12 @@ from discord.ext import commands
 import json
 import asyncio
 
-intents = discord.Intents.default()
-intents.messages = True
-intents.guilds = True
-intents.members = True
+# Define intents
+intents = discord.Intents.default()  # Enable default intents
+intents.members = True  # Enable server members intent
+intents.message_content = True  # Enable message content intent
 
+# Create bot instance with intents
 bot = commands.Bot(command_prefix="/", intents=intents)
 
 # Load configuration
